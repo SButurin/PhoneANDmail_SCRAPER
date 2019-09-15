@@ -1,0 +1,38 @@
+
+import requests
+import re
+print("")
+print("")
+print("                                    Coded by @Eyskode" )
+print("")
+print("")
+print("")
+print("                            _                _       " )     
+print("   ____                    | |              | |      " )
+print("  / __ \   ___  _   _  ___ | | __  ___    __| |  ___ " )
+print(" / / _` | / _ \| | | |/ __|| |/ / / _ \  / _` | / _  " )
+print("| | (_| ||  __/| |_| |\__ \|   < | (_) || (_| ||  __/" )
+print(" \ \__,_| \___| \__, ||___/|_|\_\ \___/  \__,_| \___|" )
+print("  \____/         __/ |                               " )
+print("                |___/                                " )
+                          
+print("")
+print("")
+
+pagina = input( "Introduce a link =  ")
+print("")
+print("")
+print("")
+
+datos = requests.get (pagina)
+telefonos = re.findall(r'(\(?[0-9]{3}\)?(?:\-|\s|\.)?[0-9]{3}(?:\-|\.)[0-9]{4})', datos.text)
+correos = re.findall(r'([\d\w\.]+@[\d\w\.\-]+\.\w+)', datos.text)
+
+print ("Scraped mails = " , correos)
+print("")
+print("")
+print ("Scraped phones = " , telefonos)
+print("")
+print("")
+
+FOLLOW ME ON MY INSTAGRAM @EYSKODE.EXE
